@@ -1,0 +1,50 @@
+<html>
+	<head>
+	<style>
+		#div1 
+		{
+			margin:10px;font-size:10px;
+		}
+		table 
+		{
+			border:1px solid #26c9ff;
+		}
+		td 
+		{
+			border:1px solid #ff5c26;width:30px;height:30px;text-align:center;
+		}
+	</style>
+	</head>
+	<body>	
+		<div id="div1"></div>
+		<script>
+		var person = ["Ramya","Guthikonda", 25, 500000,"IT"];
+		var person1 = ["FirstName","LastName", "Age", "Salary","Department"];
+			function createTable()
+			{
+				var div1 = document.getElementById('div1');
+				var table = document.createElement("table");
+				div1.appendChild(table);
+				for(var j = 0; j < 5; j++) 
+				{
+					var row = document.createElement("tr");
+					var table=document.getElementsByTagName("table");
+					table[0].appendChild(row); 
+					
+						var col1= document.createElement("td");
+						var text = document.createTextNode(person1[j]);
+						col1.appendChild(text);
+						var tr=document.getElementsByTagName("tr");
+						tr[j].appendChild(col1);
+						
+						var col2= document.createElement("td");
+						var text = document.createTextNode(person[j]);
+						col2.appendChild(text);
+						var tr=document.getElementsByTagName("tr");
+						tr[j].appendChild(col2);	
+				}
+			}
+		</script>	
+		<input type="submit" value="GetPersonData" onclick="createTable()">
+	</body>
+	</html>
